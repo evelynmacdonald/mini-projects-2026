@@ -114,8 +114,6 @@ def convert(filename,path='datafiles/',configpath='datafiles/',templatepath='psg
     vars = vars + ',Winds,Tsurf,Psurf,Temperature,Pressure,H2O'
     if surfaces != None:
         vars = vars + ',Surf_Snow,Surf_Ocean'
-    if clouds == True:
-        vars = vars + ',Water'
     print(vars)
     templ['ATMOSPHERE-GCM-PARAMETERS'] = ''
 
@@ -145,6 +143,6 @@ def convert(filename,path='datafiles/',configpath='datafiles/',templatepath='psg
         fb.close()
     return(templ)
     
-data = convert('kearth_tl',clouds=False,surfaces=['snow','ocean'])      
+data = convert('earth',surfaces=['snow','ocean'])      
 
 
